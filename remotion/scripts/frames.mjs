@@ -25,13 +25,16 @@ mkdirSync(outDir, { recursive: true });
 console.log('bundling...');
 // publicDir must be passed explicitly: remotion.config.ts only applies to the CLI,
 // not the programmatic bundle() API. ../media is the public root.
+// Optional: REMOTION_BROWSER=/path/to/chrome-headless-shell skips Remotion's browser download
+// (needed where remotion.media is unreachable, e.g. sandboxed cloud containers).
+const browserExecutable = process.env.REMOTION_BROWSER || null;
 const serveUrl = await bundle({ entryPoint: path.join(root, 'src', 'index.ts'), publicDir: path.join(root, '..', 'media') });
-const composition = await selectComposition({ serveUrl, id });
+const composition = await selectComposition({ serveUrl, browserExecutable, id });
 
 for (const frame of frames) {
   const f = Math.max(0, Math.min(composition.durationInFrames - 1, frame));
   const out = path.join(outDir, `${id}-f${String(f).padStart(4, '0')}.png`);
-  await renderStill({ serveUrl, composition, output: out, frame: f, scale: SCALE, overwrite: true, imageFormat: 'png' });
+  await renderStill({ serveUrl, browserExecutable, composition, output: out, frame: f, scale: SCALE, overwrite: true, imageFormat: 'png' });
   console.log('  ->', path.relative(root, out));
 }
 console.log('done');
