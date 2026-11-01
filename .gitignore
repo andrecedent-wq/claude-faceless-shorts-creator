@@ -12,6 +12,7 @@ venv/
 # voice/ = cached ElevenLabs TTS lines, output/ = rendered videos.
 # Both are rebuilt by the pipeline; finals are linked from the README instead.
 shorts/*/voice/
+shorts/*/*/voice/
 shorts/*/output/
 ai-shorts/*/voice/
 ai-shorts/*/output/

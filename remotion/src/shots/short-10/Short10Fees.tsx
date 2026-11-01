@@ -99,7 +99,9 @@ const bump = (f: number, a: number, b: number) => Math.min(prog(f, a, a + 5), 1 
 // rewinds that state away, and the REVEAL re-draws it — which is what makes the loop close
 // for free: the end of the reveal IS frame 0 again.
 // =============================================================================
-const Short10Fees: React.FC = () => {
+// hideProgress: set by the TikTok cut (Short10FeesTT), which embeds this shot in pieces and draws
+// one ProgressBar over its own, longer timeline.
+const Short10Fees: React.FC<{ hideProgress?: boolean }> = ({ hideProgress = false }) => {
   const f = useCurrentFrame();
 
   const punch =
@@ -154,10 +156,10 @@ const Short10Fees: React.FC = () => {
         <div style={{ opacity: titleOp }}>
           <BigTitle
             lines={[
-              { text: 'THE 1% FEE', color: '#ffffff' },
-              { text: 'THAT EATS 24%', color: RED },
+              { text: 'THIS 1% FEE', color: '#ffffff' },
+              { text: 'STEALS $316K', color: RED },
             ]}
-            subtitle="of your retirement"
+            subtitle="from your retirement"
             y={150}
             size={84}
             warm
@@ -259,7 +261,7 @@ const Short10Fees: React.FC = () => {
       </Sequence>
 
       <Captions lines={VO} y={1390} accent={GOLD} />
-      <ProgressBar color={RED} />
+      {!hideProgress && <ProgressBar color={RED} />}
     </AbsoluteFill>
   );
 };
