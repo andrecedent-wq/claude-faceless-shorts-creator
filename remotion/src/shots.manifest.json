@@ -8,6 +8,22 @@
   "transparent": false
  },
  {
+  "id": "Gta6ClipA",
+  "durationInSeconds": 40,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "transparent": false
+ },
+ {
+  "id": "Gta6ClipB",
+  "durationInSeconds": 63,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "transparent": false
+ },
+ {
   "id": "Short1Chess",
   "durationInSeconds": 42,
   "fps": 30,
