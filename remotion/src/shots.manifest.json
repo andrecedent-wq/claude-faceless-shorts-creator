@@ -48,6 +48,22 @@
   "transparent": false
  },
  {
+  "id": "Short13AiSub",
+  "durationInSeconds": 42,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "transparent": false
+ },
+ {
+  "id": "Short13AiSubTT",
+  "durationInSeconds": 63,
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "transparent": false
+ },
+ {
   "id": "Short2Math",
   "durationInSeconds": 42,
   "fps": 30,
