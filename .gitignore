@@ -26,3 +26,6 @@ ai-shorts/*/bakeoff/*.mp4
 
 # local editor config
 .vscode/
+
+# third-party footage for clip-account edits (never commit)
+media/projects/gta6/
