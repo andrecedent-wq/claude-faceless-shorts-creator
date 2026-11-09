@@ -9,6 +9,6 @@ export const compositionConfig = {
   height: 1920,
 };
 
-const Gta6ClipB: React.FC = () => <Gta6Clip src="projects/gta6/srcB.mp4" daysLeft={10} endLines={['PRE-LOAD NOV 12', 'LAUNCH NOV 19']} />;
+const Gta6ClipB: React.FC = () => <Gta6Clip src="projects/gta6/srcB.mp4" beatsKey="B" daysLeft={10} endLines={['PRE-LOAD NOV 12', 'LAUNCH NOV 19']} />;
 
 export default Gta6ClipB;
